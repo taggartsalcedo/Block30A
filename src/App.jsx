@@ -1,17 +1,16 @@
 import { useState } from 'react'
 import bookLogo from './assets/books.png'
-import Accounts from './components/Accounts.jsx'
 import Books from './components/Books.jsx'
 import Login from './components/login.jsx'
-import Navigation from './components/navigation.jsx'
 import Register from './components/Register.jsx'
 import SingleBook from './components/SingleBook.jsx'
 
 
-function App() {
-  const [token, setToken] = useState(null)
-  const [books, setBooks] = useState(false)
-  const [register, setRegister] = useState(false)
+const App = () => {
+  const [token, setToken] = useState(null) //app.jsx
+  const [homeLibrary, setHomeLibrary] = useState(false) //books.jsx 
+  const [register, setRegister] = useState(false) // register.jsx
+  const [thisBook, setThisBook] =useState(``) //singleBook.jsx  
 
 
   return (
@@ -29,14 +28,14 @@ function App() {
 
       <h1>Books</h1>
       {
-        homeLibrary ? (
+          homeLibrary ? (
           <SingleBook
-          thisBook={thisBook}
-          setHomeLibrary={setHomeLibrary}
+          thisBook= {thisBook}
+          setHomeLibrary= {setHomeLibrary}
           />) : (
           <Books
-          setHomeLibrary={setHomeLibrary}
-          setThisBook={setThisBook}
+          setHomeLibrary= {setHomeLibrary}
+          setThisBook= {setThisBook}
           />
         )
       }
